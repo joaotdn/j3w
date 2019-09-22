@@ -17,8 +17,6 @@
     width: auto;
     height: auto;
     transform: translateX(-50%) translateY(-50%);
-    background-size: cover;
-    transition: 1s opacity;
   }
 
   > .grid-container {
@@ -34,7 +32,7 @@
   @extend .height-100;
   @extend %top-left;
   z-index: 1;
-  background-color: rgba($white, .3);
+  background-color: rgba($white, .5);
 
   &::before {
     @extend %before-block-absolute;
@@ -48,7 +46,7 @@
     background: -o-linear-gradient(top, transparent 0%, $white 90%, $white 30%);
     background: -ms-linear-gradient(top, transparent 0%, $white 90%, $white 30%);
     background: linear-gradient(to bottom, transparent 0%, $white 90%, $white 30%);
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#000000', GradientType=0 );
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#000000', GradientType=0);
   }
 }
 
@@ -61,6 +59,7 @@
     font-weight: 700;
     padding: rem-calc(10 20);
     font-size: rem-calc(52);
+
     span {
       color: $success-color;
     }
@@ -85,15 +84,96 @@
   @extend .width-100;
   @extend %top-left;
   z-index: 11;
+}
 
+.main-menu {
   a {
     text-transform: uppercase;
     color: $secondary-color;
     @extend .position-relative;
     @extend .display-inline-block;
+    @extend .margin-left-1;
+    font-weight: 500;
+
+    &:before {
+      @extend %before-block-absolute;
+      left: 0;
+      top: 48%;
+      width: rem-calc(10);
+      height: 1px;
+      background-color: $secondary-color;
+      transition: background-color .3s linear;
+    }
 
     &:hover {
       color: $success-color;
+
+      &:before {
+        background-color: $success-color;
+      }
     }
+  }
+}
+
+.lang-menu {
+  a {
+    opacity: .5;
+    font-size: rem-calc(24);
+    transition: opacity .3s linear;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+}
+
+.section-down {
+  @extend .position-absolute;
+  bottom: 0;
+  left: 0;
+  @extend .padding-bottom-1;
+  z-index: 99;
+  @extend .width-100;
+}
+
+.scroll-downs {
+  display: none;
+  @include breakpoint(large up) {
+    display: inline-block;
+  }
+}
+
+.mousey {
+  width: 3px;
+  padding: 10px 15px;
+  height: 28px;
+  border: 2px solid rgba($primary-color, .5);
+  border-radius: 25px;
+  opacity: 0.75;
+  box-sizing: content-box;
+}
+
+.scroller {
+  width: 3px;
+  height: 6px;
+  border-radius: 25%;
+  background-color: $primary-color;
+  animation-name: scroll;
+  animation-duration: 2.2s;
+  animation-timing-function: cubic-bezier(.15, .41, .69, .94);
+  animation-iteration-count: infinite;
+}
+
+@keyframes scroll {
+  0% {
+    opacity: 0;
+  }
+  10% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(15px);
+    opacity: 0;
   }
 }

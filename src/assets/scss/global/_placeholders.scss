@@ -18,3 +18,12 @@
 %mansalva {
   font-family: 'Mansalva', cursive;
 }
+
+%section {
+  padding: rem-calc(30 0);
+  background-color: $white;
+
+  @include breakpoint(medium up) {
+    padding: rem-calc(100 0);
+  }
+}

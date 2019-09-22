@@ -1,0 +1,31 @@
+.menu-mobile {
+  background-color: rgba($white, 1);
+  @extend %top-left;
+  z-index: 999;
+  transition: all .3s linear;
+  transform: scale(0);
+  opacity: 0;
+  visibility: hidden;
+
+  &.active {
+    transform: scale(1);
+    opacity: 1;
+    visibility: visible;
+  }
+
+  nav {
+    @include vertical-center;
+    left: 0;
+    @extend .width-100;
+  }
+
+  a {
+    text-transform: uppercase;
+    font-size: rem-calc(46);
+    @extend .margin-bottom-1;
+  }
+}
+
+a[data-toggle-menu] {
+  font-size: rem-calc(24);
+}
