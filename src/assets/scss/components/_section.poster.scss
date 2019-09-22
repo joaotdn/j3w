@@ -1,0 +1,99 @@
+.poster {
+  @extend .position-relative;
+  @extend .width-100;
+  @extend .height-100;
+  @extend %bgcover;
+  background-image: url(../img/poster.jpg);
+  background-color: $white;
+  background-position: center center;
+  overflow: hidden;
+
+  video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    transform: translateX(-50%) translateY(-50%);
+    background-size: cover;
+    transition: 1s opacity;
+  }
+
+  > .grid-container {
+    @extend .position-relative;
+    @extend .height-100;
+    z-index: 9;
+  }
+}
+
+.black-mask {
+  @extend .position-absolute;
+  @extend .width-100;
+  @extend .height-100;
+  @extend %top-left;
+  z-index: 1;
+  background-color: rgba($white, .3);
+
+  &::before {
+    @extend %before-block-absolute;
+    @extend %top-left;
+    @extend .width-100;
+    @extend .height-100;
+    background: transparent;
+    background: -moz-linear-gradient(top, transparent 0%, $white 80%, $white 30%);
+    background: -webkit-gradient(left top, left bottom, color-stop(0%, transparent), color-stop(90%, $white), color-stop(30%, $white));
+    background: -webkit-linear-gradient(top, transparent 0%, $white 90%, $white 30%);
+    background: -o-linear-gradient(top, transparent 0%, $white 90%, $white 30%);
+    background: -ms-linear-gradient(top, transparent 0%, $white 90%, $white 30%);
+    background: linear-gradient(to bottom, transparent 0%, $white 90%, $white 30%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#000000', GradientType=0 );
+  }
+}
+
+.brand-content {
+  h1 {
+    @extend .display-inline-block;
+    color: $primary-color;
+    text-transform: uppercase;
+    border: 8px solid $primary-color;
+    font-weight: 700;
+    padding: rem-calc(10 20);
+    font-size: rem-calc(52);
+    span {
+      color: $success-color;
+    }
+  }
+
+  h2 {
+    @extend %mansalva;
+    margin-top: rem-calc(10);
+    color: $secondary-color;
+  }
+
+  @include breakpoint(medium up) {
+    h1 {
+      font-size: rem-calc(92);
+    }
+  }
+}
+
+.poster-menu {
+  @extend .padding-top-1;
+  @extend .position-absolute;
+  @extend .width-100;
+  @extend %top-left;
+  z-index: 11;
+
+  a {
+    text-transform: uppercase;
+    color: $secondary-color;
+    @extend .position-relative;
+    @extend .display-inline-block;
+
+    &:hover {
+      color: $success-color;
+    }
+  }
+}

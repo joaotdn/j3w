@@ -1,0 +1,20 @@
+%top-left {
+  top: 0;
+  left: 0;
+}
+
+%bgcover {
+  -webkit-background-size: cover;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+%before-block-absolute {
+  content: '';
+  display: block;
+  position: absolute;
+}
+
+%mansalva {
+  font-family: 'Mansalva', cursive;
+}
