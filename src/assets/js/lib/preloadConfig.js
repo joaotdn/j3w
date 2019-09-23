@@ -1,3 +1,4 @@
+import AOS from 'aos';
 var QueryLoader2 = require("queryloader2");
 
 var loader = QueryLoader2(document.querySelector("body"), {
@@ -7,7 +8,7 @@ var loader = QueryLoader2(document.querySelector("body"), {
     barHeight: 1,
     minimumTime: 200,
     fadeOutTime: 1000,
-    onComplete() {
-        console.log('teste');
+    onComplete: function () {
+        AOS.init();
     }
 });

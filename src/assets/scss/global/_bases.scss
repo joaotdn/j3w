@@ -2,10 +2,10 @@ html, body {
   @extend .height-100;
   min-height: 100%;
 }
-//
-//body {
-//  @extend .position-relative;
-//}
+
+body {
+  overflow-x: hidden;
+}
 
 a {
   transition: color .3s linear;

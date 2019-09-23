@@ -2,7 +2,7 @@
 
 @import 'settings';
 @import 'foundation';
-@import 'motion-ui';
+//@import 'motion-ui';
 
 // Placeholders
 @import 'global/placeholders';
@@ -65,8 +65,8 @@
 @include foundation-prototype-classes;
 
 // Motion UI
-@include motion-ui-transitions;
-@include motion-ui-animations;
+//@include motion-ui-transitions;
+//@include motion-ui-animations;
 
 // Components
 @import 'components/menu.mobile';
