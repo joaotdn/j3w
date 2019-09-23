@@ -1,0 +1,6 @@
+#footer {
+  @extend .width-100;
+  background-color: $secondary-color;
+  padding: rem-calc(20 0);
+  color: $medium-gray;
+}
