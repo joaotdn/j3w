@@ -4,7 +4,8 @@ import jQuery from 'jquery';
     const toggleMenu = $('*[data-toggle-menu]');
 
     if (toggleMenu.length) {
-        toggleMenu.on('click', function () {
+        toggleMenu.on('click', function (e) {
+            e.preventDefault();
             $('.menu-mobile').toggleClass('active')
         })
     }

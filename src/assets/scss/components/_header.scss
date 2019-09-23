@@ -1,0 +1,28 @@
+#header {
+  @extend .position-fixed;
+  @extend .width-100;
+  @extend %top-left;
+  background-color: rgba($white, .9);
+  padding: rem-calc(5 0);
+  z-index: 991;
+  transition: all .3s linear;
+  opacity: 0;
+  transform: translateY(-100%);
+
+  &.show {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.header-logo {
+  font-weight: 700;
+  display: inline-block;
+  padding: rem-calc(0 10);
+  border: 2px solid $primary-color;
+  color: $primary-color;
+  font-size: rem-calc(20);
+  span {
+      color: $success-color;
+  }
+}

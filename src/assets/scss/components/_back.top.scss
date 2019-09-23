@@ -1,0 +1,17 @@
+.back-top {
+  @extend .position-fixed;
+  bottom: rem-calc(20);
+  right: rem-calc(20);
+  transition: opacity .3s linear;
+  opacity: 0;
+  z-index: 991;
+
+  &.show {
+    opacity: 1;
+  }
+
+  a {
+    color: $success-color;
+    font-size: rem-calc(32);
+  }
+}
