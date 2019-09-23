@@ -1,9 +1,18 @@
 .section-header {
+  margin-bottom: rem-calc(60);
+  @extend .position-relative;
+  z-index: 9;
+
+  @include breakpoint(medium up) {
+    margin-bottom: rem-calc(100);
+  }
+
   h2 {
     text-transform: uppercase;
     font-weight: 700;
     color: $primary-color;
   }
+
   h3 {
     color: $success-color;
   }
