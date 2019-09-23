@@ -16,4 +16,14 @@
   h3 {
     color: $success-color;
   }
+  p {
+    color: $dark-gray;
+    @extend .margin-top-1;
+  }
+
+  &.success {
+    h2, h3, p {
+      color: $success-color;
+    }
+  }
 }

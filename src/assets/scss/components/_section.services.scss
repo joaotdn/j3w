@@ -72,10 +72,12 @@
   z-index: 1 !important;
 }
 
+// TODO retirar sobreposição
 .slick-prev {
   left: 0 !important;
 }
 
+// TODO retirar sobreposição
 .slick-next {
   right: rem-calc(20) !important;
 }

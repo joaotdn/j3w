@@ -1,0 +1,8 @@
+#contact {
+  @extend %section;
+  @extend %bgcover;
+  @extend .position-relative;
+  background-color: $primary-color;
+  border-top: 10px solid $success-color;
+  z-index: 99;
+}
